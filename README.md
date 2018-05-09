@@ -47,9 +47,9 @@ The worst case scenario is like the squished image above. All of the content for
 
 ### Live example
 
-Try out the codepen example. Resize your browser width and see what happens to the content.
+Try out the codepen link. Resize your browser width and see what happens to the content.
 
-https://codepen.io/jabyess/pen/mLpxym
+https://codepen.io/jabyess/pen/ELoMGy
 
 ### Bad solutions
 
@@ -59,7 +59,7 @@ You may even still see sites that do this. Visiting `https://www.reddit.com` fro
 
 These are totally different sites! Different html, css, and javascript being served to the same users, just because they logged in from their phone.
 
-THIS IS TERRIBLE! Now you (the developer) have to maintain two completely different websites. They're probably both going to suffer as a result.
+THIS IS TERRIBLE! Now you (the developer) have to maintain two completely different websites. Both versions, and you, are all probably both going to suffer as a result.
 
 ### Introducing Media Queries
 
@@ -102,8 +102,90 @@ Here's what [bootstrap](https://getbootstrap.com/docs/4.1/layout/overview/), the
 @media (min-width: 1200px) { ... }
 ```
 
-You're not tied to using only these specific widths, but for now let's keep them because they're there.
+You're not tied to using only these specific widths, but keep them for the sake of this exercise.
+
+> Related: [here's a really good article](https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862) on how you should choose your breakpoints
 
 ### Let's use all this stuff now
 
 We'll use these media queries and breakpoints together to make sure that our website looks nice on all sized devices!
+
+Let's go back to that codepen we looked at before and make some changes.
+https://codepen.io/jabyess/pen/ELoMGy
+
+The first thing we should do is get a sense of all the different components that we want to affect using media queries.
+
+In this case, we'll start with the `.text` and `.sidebar` classes, because as we saw before, they have fixed widths and are full of content that gets squished on small screen sizes.
+
+Since we've decided on our breakpoints above, let's write a media query and create a new class. We'll put this new class on whatever elements we want to change with the media query.
+
+We could also just modify the classes we already have by wrapping them in media queries, but that's less flexible, and way more repetitive.
+
+```css
+@media (max-width: 576px) {
+  .small-100 {
+    width: 100%;
+  }
+}
+```
+Now go ahead and add that class to the appropriate elements. Resize the window. WHAT IS HAPPENING??!
+
+The sidebar should pop down below the text content when the viewport width gets smaller than 572px.
+
+Feel free to add more media queries at different widths and use them to create different classes!
+
+### What else can we do with media queries?
+
+Obviously, width isn't the only property we can change using a media query. We can change **any** css property.
+
+Add a new class to the small media query called `hidden-small`
+
+```css
+@media (max-width: 576px) {
+  .small-100 {
+    width: 100%;
+  }
+  .hidden-small {
+    display: none;
+  }
+}
+```
+
+Now go apply that class to a couple of the `.navbar-item` elements, and watch them disappear when you shrink your browser window.
+
+**AMAZING!!!**
+
+You can also do this in reverse - hiding stuff on large screens and only showing on mobile. Think about the hamburger menu that appears on mobile navbars.
+
+### Thinking responsively
+
+When planning your site, don't think about a piece of paper on a desk with stuff drawn on it. That's a fixed layout! Instead, think in components and think about how those components will look on different devices.
+
+Start from the mobile layout and scale up when designing your page. Most CSS frameworks are mobile-first, mobile is a huge portion of web traffic, and it's easier to scale up and add items than cram stuff into a small space.
+
+It's 2018. We don't build non-responsive websites anymore!
+
+
+### Bonus Aside: the Grid
+
+Working with random percentages is great and all, but having consistency will take you much further and keep you from pulling your hair out.
+
+Enter: the GRID
+
+![THE GRID](./images/tron_grid.jpg)
+
+Instead of picking 40, 50, 60, whatever percent, many frameworks use 12 columns. 
+
+The basic idea is that columns are equal to n divided by 12. So an element that is 3 columns wide === 3/12, which equals 25%.
+
+Bootstrap uses this to generate CSS classes for each breakpoint and column combo. Example css classes:
+
+* `col-xs-12` means 12 columns wide at xtra small width
+* `col-md-4` means 4 columns wide at medium width
+* `col-lg-2` means 2 columns wide at large width
+
+
+## Resources
+
+* A list of device viewport sizes: http://viewportsizes.com/
+* Solution: https://codepen.io/jabyess/pen/vjddBP
