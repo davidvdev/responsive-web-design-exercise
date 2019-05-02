@@ -67,10 +67,11 @@ screen is way smaller now.
 
 ## Live example
 
-Try out the codepen link. Resize your browser width and see what happens to the
-content.
+Fork and clone the repo [example code for this lesson](https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-code)
 
-https://codepen.io/jabyess/pen/ELoMGy
+Open up the directory in VS Code and open the HTML in your browser with the CLI command `open index.html`
+
+Resize your browser width and see what happens to the content.
 
 ## Bad solutions
 
@@ -96,7 +97,7 @@ Here's what a media query looks like:
 
 ```css
 @media screen (max-width: 500px) {
-	width: 100%;
+  width: 100%;
 }
 ```
 
@@ -126,22 +127,22 @@ most popular CSS framework uses:
 ```css
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-	...;
+  ...;
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-	...;
+  ...;
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	...;
+  ...;
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	...;
+  ...;
 }
 ```
 
@@ -157,8 +158,7 @@ of this exercise.
 We'll use these media queries and breakpoints together to make sure that our
 website looks nice on all sized devices!
 
-Let's go back to that codepen we looked at before and make some changes.
-https://codepen.io/jabyess/pen/ELoMGy
+Let's make some changes to the starter code to make our site responsive.
 
 The first thing we should do is get a sense of all the different components that
 we want to affect using media queries.
@@ -179,9 +179,9 @@ queries, but that's less flexible, and way more repetitive.
 
 ```css
 @media (max-width: 576px) {
-	.small-100 {
-		width: 100%;
-	}
+  .small-100 {
+    width: 100%;
+  }
 }
 ```
 
@@ -203,12 +203,12 @@ Add a new class to the small media query called `hidden-small`
 
 ```css
 @media (max-width: 576px) {
-	.small-100 {
-		width: 100%;
-	}
-	.hidden-small {
-		display: none;
-	}
+  .small-100 {
+    width: 100%;
+  }
+  .hidden-small {
+    display: none;
+  }
 }
 ```
 
@@ -246,7 +246,7 @@ Instead of picking 40, 50, 60, whatever percent, many frameworks use 12 columns.
 The basic idea is that columns are equal to n divided by 12. So an element that
 is 3 columns wide === 3/12, which equals 25% width.
 
-5 columns === 5 / 12, or 41.6666667% width. 
+5 columns === 5 / 12, or 41.6666667% width.
 
 Don't worry about the weird numbers, the browser does the math for us.
 
@@ -262,4 +262,5 @@ We can apply these classes to any elements that we want. Generally, we apply the
 ## Resources
 
 - A list of device viewport sizes: http://viewportsizes.com/
-- Solution: https://codepen.io/jabyess/pen/vjddBP
+- Solution: https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-code/tree/solution-responsive
+  - can also run `git checkout solution-responsive` in the repo we forked and clone earlier.
