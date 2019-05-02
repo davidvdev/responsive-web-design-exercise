@@ -67,7 +67,7 @@ screen is way smaller now.
 
 ## Live example
 
-Fork and clone the repo [example code for this lesson](https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-code)
+Fork and clone the [starter code for this lesson](https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-starter-code)
 
 Open up the directory in VS Code and open the HTML in your browser with the CLI command `open index.html`
 
@@ -262,5 +262,5 @@ We can apply these classes to any elements that we want. Generally, we apply the
 ## Resources
 
 - A list of device viewport sizes: http://viewportsizes.com/
-- Solution: https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-code/tree/solution-responsive
+- [Solution branch for the starter code](https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-starter-code/tree/solution-responsive)
   - can also run `git checkout solution-responsive` in the repo we forked and clone earlier.
