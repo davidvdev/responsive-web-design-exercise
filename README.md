@@ -69,7 +69,7 @@ screen is way smaller now.
 
 Fork and clone the [starter code for this lesson](https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-starter-code)
 
-Open up the directory in VS Code and open the HTML in your browser with the CLI command `open index.html`
+Open up the directory in Sublime Text and open the HTML in your browser with the CLI command `open index.html`
 
 Resize your browser width and see what happens to the content.
 
