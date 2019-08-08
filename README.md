@@ -67,9 +67,11 @@ screen is way smaller now.
 
 ## Live example
 
-Fork and clone the [starter code for this lesson](https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-starter-code)
+Fork and clone the
+[starter code for this lesson](https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-starter-code)
 
-Open up the directory in Sublime Text and open the HTML in your browser with the CLI command `open index.html`
+Open up the directory in Sublime Text and open the HTML in your browser with the
+CLI command `open index.html`
 
 Resize your browser width and see what happens to the content.
 
@@ -93,10 +95,10 @@ suffer as a result.
 Media queries are a CSS feature that lets you define properties and values at
 different browser widths.
 
-Here's what a media query looks like:
+Here's what a media query looks like in its simplest form:
 
 ```css
-@media screen (max-width: 500px) {
+@media (max-width: 500px) {
   width: 100%;
 }
 ```
@@ -113,6 +115,14 @@ Let's break it down:
 > For reference:
 > https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
 
+We can also specify the type and the size:
+
+```css
+@media screen and (max-width: 500px) {
+  width: 100%;
+}
+```
+
 ## Breakpoints
 
 Breakpoints are just a set (usually 3-5) of viewport widths, that you use in
@@ -126,22 +136,22 @@ most popular CSS framework uses:
 
 ```css
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+@media screen and (min-width: 576px) {
   ...;
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   ...;
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
   ...;
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   ...;
 }
 ```
@@ -178,7 +188,7 @@ queries, but that's less flexible, and way more repetitive.
 > bootstrap has.
 
 ```css
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
   .small-100 {
     width: 100%;
   }
@@ -202,7 +212,7 @@ can change **any** css property.
 Add a new class to the small media query called `hidden-small`
 
 ```css
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
   .small-100 {
     width: 100%;
   }
@@ -257,10 +267,13 @@ combo. Example css classes:
 - `col-md-4` means 4 columns wide at medium width
 - `col-lg-2` means 2 columns wide at large width
 
-We can apply these classes to any elements that we want. Generally, we apply them to elements that we want to act as containers. Then those elements resize depending on the screen size.
+We can apply these classes to any elements that we want. Generally, we apply
+them to elements that we want to act as containers. Then those elements resize
+depending on the screen size.
 
 ## Resources
 
 - A list of device viewport sizes: http://viewportsizes.com/
 - [Solution branch for the starter code](https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-starter-code/tree/solution-responsive)
-  - can also run `git checkout solution-responsive` in the repo we forked and clone earlier.
+  - can also run `git checkout solution-responsive` in the repo we forked and
+    clone earlier.
