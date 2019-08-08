@@ -115,7 +115,7 @@ Let's break it down:
 > For reference:
 > https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
 
-We can also specify the type and the size:
+We can also specify the media type as well as the size:
 
 ```css
 @media screen and (max-width: 500px) {
