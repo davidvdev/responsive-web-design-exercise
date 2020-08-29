@@ -11,19 +11,17 @@ _After this lesson, you will be able to:_
 - Define a function in an object
 - Pass a function as a parameter
 
-## What is responsive design? 
+## Responsive Web Design
 
-"Responsive Design" is the strategy of making a site that "responds" to the browser and device that it is being shown on... by looking awesome no matter what.
+**Responsive Web Design**, not surprisingly, is designing a web page to respond to the size of the device's screen being used to view it.
 
-Or, the dryer Wikipedia definition:
+Specifically, the most important criteria to respond to is the **width** of the device's screen.
 
-"Responsive web design (RWD) is a web design approach aimed at crafting sites to provide an optimal viewing experience—easy reading and navigation with a minimum of resizing, panning, and scrolling—across a wide range of devices (from mobile phones to desktop computer monitors).""
+Lastly, what specifically **responds**? Primarily, the overall layout of the page, but you can pretty much change anything on the page you want.  For example, I'm sure you've seen the menu links in a navigation bar disappear and be replaced with a "hamburger" icon before.  Take a look at the image at the top of this lesson too - notice how the number of columns changes?
 
-#### More devices
+Okay, now that you know what Responsive Design is, let's look at some real-world examples out there.
 
-Not that long ago, building a successful online presence meant just ensuring that your website worked correctly in all the major desktop browsers.
-
-Fast forward to today, and the desktop computer is dying, more than 71% of the US population own a smartphone.
+**Facts You Should Know**
 
 Here are some facts from [2020 Mobile vs. Desktop Usage Insights](https://techjury.net/blog/mobile-vs-desktop-usage/#gref)
 
@@ -36,16 +34,6 @@ Here are some facts from [2020 Mobile vs. Desktop Usage Insights](https://techju
 - More than half of all video views come from mobile devices.
 - Mobile apps have higher engagement rates than mobile-optimized websites or desktop web viewing.
 
-
-## Responsive Web Design
-
-**Responsive Web Design**, not surprisingly, is designing a web page to respond to the size of the device's screen being used to view it.
-
-Specifically, the most important criteria to respond to is the **width** of the device's screen.
-
-Lastly, what specifically **responds**? Primarily, the overall layout of the page, but you can pretty much change anything on the page you want.  For example, I'm sure you've seen the menu links in a navigation bar disappear and be replaced with a "hamburger" icon before.  Take a look at the image at the top of this lesson too - notice how the number of columns changes?
-
-Okay, now that you know what Responsive Design is, let's look at some real-world examples out there.
 
 ## Mobile First Design Philosophy
 
@@ -75,7 +63,9 @@ The viewport `<meta name="viewport" ...>` enables us to inform the browser not t
 
 Between the two images below can you guess which one is using the viewport tag? 
 
-<img src="https://i.imgur.com/1d3F76a.jpg">
+<p align="center">
+  <img src="https://i.imgur.com/1d3F76a.jpg" width=600>
+</p>
 
 This viewport `meta` tag is so important, that VS Code has been adding it automatically in the HTML boilerplate.
 
@@ -91,7 +81,7 @@ The following should look familiar...
 
 #### Chrome Device Toolbar
 
-DevTools comes with a great feature to easily view a web sites responsiveness using the `device toolbar`. 
+DevTools comes with a great feature to easily view a web sites responsiveness using the `device toolbar`.  
 
 <img src="https://i.imgur.com/DHYdzht.png" width=300/>
 
@@ -101,7 +91,7 @@ Once the toolbar is activated we will be able change the screen width using the 
 
 #### Am I Responsive
 
-Another option is to use [ami.responsivedesign.is](https://i.imgur.com/pdFgvi2.jpg).  This will display a site in 4 different viewports.
+Another option is to use [ami.responsivedesign.is](https://i.imgur.com/pdFgvi2.jpg).  This will display a site in 4 different viewports.  
 
 <img src="https://i.imgur.com/R63nt7j.jpg" />
 
@@ -130,10 +120,11 @@ Let's break it down:
 - `(max-width: 500px)` is one of the parameters you can specify. There are lots.
   This tells the screen to only apply this query when the screen width is BELOW
   500px.
+- `p { color: red;}` is the element we are targeting
 
 #### Additional Settings
 
-Besides max-width there is also min-width, both of which can be used together.
+Besides `max-width` there is also `min-width` and both an be used together in the same query. 
 
 | Property       | What's It Do?                           | Examples                                  |
 | --------------- | --------------------------------------- | ----------------------------------------- |
@@ -207,8 +198,8 @@ Here is a [deployed version](http://seir-responsive-design.surge.sh/) of the sit
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 5min
 
-- Take a moment to examine the site in DevTools
-- Make use of the Device Toolbar to see what it looks like in Tablet and Mobile
+- Take a moment to examine the deployed site in DevTools
+- Make use of the `Device Toolbar` to see what it looks like in `Tablet` and `Mobile`
 - Inspect a few elements and see if you can discover a few media queries
 - When asked slack your response in a thread created by the instructor
 
@@ -218,7 +209,7 @@ Here is a [deployed version](http://seir-responsive-design.surge.sh/) of the sit
 
 #### Starter-Code Directory
 
-- Navigate to the starter-code directory
+- Navigate to the directory that contains the starter code
 - Inside we will find the following:
   - `index.html` - it is already set up for you 
   - `style-main.css` - a little bit of css to get us started - it is already set up for you - 
@@ -236,7 +227,7 @@ In the HTML we should see all the css files linked in the following order:
 
 **Live Server**
 
-Open `index.html` in Live Server and were ready to start coding.  
+Open `index.html` in `Live Server` and were ready to start coding.  
 
 ### Our First Media Query
 
@@ -368,8 +359,6 @@ Before we implement the final design let's first talk about the `hamburger` menu
 
 <hr>
 
-You can also do this in reverse - hiding stuff on large screens and only showing
-on mobile. Think about the hamburger menu that appears on mobile navbars.
 
 ## Thinking responsively
 
