@@ -116,7 +116,9 @@ Here's what a media query looks like in its simplest form:
 
 ```css
 @media screen and (max-width: 500px) {
-  width: 100%;
+  p { 
+   color: red;
+  }
 }
 ```
 
@@ -124,13 +126,21 @@ Let's break it down:
 
 - `@media` is the start of the declaration. required.
 - `screen` tells the browser to only use this on the screen. Another option is
-  `print` for pdfs or printing out html pages. optional.
+  `print` for printing out html pages.
 - `(max-width: 500px)` is one of the parameters you can specify. There are lots.
   This tells the screen to only apply this query when the screen width is BELOW
   500px.
 
-> For reference:
-> https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+#### Additional Settings
+
+Besides max-width there is also min-width, both of which can be used together.
+
+| Property       | What's It Do?                           | Examples                                  |
+| --------------- | --------------------------------------- | ----------------------------------------- |
+| max-width         | <= max-width                 | @media and (max-width: 600px)                                  |
+| min-width | >= min-width| @media and (min-width: 600px)                        |
+| max-width and min-width | between those ranges only               | @media only screen and (max-width: 600px) and (min-width: 400px)  |
+
 
 ## Breakpoints
 
@@ -168,24 +178,19 @@ most popular CSS framework uses:
 You're not tied to using only these specific widths, but keep them for the sake
 of this exercise.
 
-> Related:
-> [here's a really good article](https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862)
-> on how you should choose your breakpoints
 
 ## Our Design
 
 We'll use these media queries and breakpoints together to make sure that our
 website looks nice on all sized devices!
 
-Let's make some changes to the starter code to make our site responsive.
-
 The first thing we should do is get a sense of all the different components that
 we want to affect using media queries.
 
 #### Desktop Version
-Below is a desktop version of a build that you might have already done in class.
+This is the desktop version of the site.
 
-<img src="https://i.imgur.com/qG9wv1U.png" width=700/>
+<img src="https://i.imgur.com/qG9wv1U.png" />
 
 #### Mobile and Tablet Versions
 And here is the same web site with media queries enabled for mobile and desktop.
@@ -193,16 +198,175 @@ And here is the same web site with media queries enabled for mobile and desktop.
 <img src="https://i.imgur.com/sJ3w9bS.png" />
 
 
+
+#### Live Site
+
+Here is a [deployed version](http://seir-responsive-design.surge.sh/) of the site. 
+
+<hr>
+
+#### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 5min
+
+- Take a moment to examine the site in DevTools
+- Make use of the Device Toolbar to see what it looks like in Tablet and Mobile
+- Inspect a few elements and see if you can discover a few media queries
+- When asked slack your response in a thread created by the instructor
+
+<hr>
+
+### Getting Started
+
+#### Starter-Code Directory
+
+- Navigate to the starter-code directory
+- Inside we will find the following:
+  - `index.html` - it is already set up for you 
+  - `style-main.css` - a little bit of css to get us started - it is already set up for you - 
+  - `style-grid.css` - this contains all our initial css grid setup
+  - `responsive.css` - this is where we will include our css
+
+In the HTML we should see all the css files linked in the following order:
+
+```html
+  <link rel="stylesheet" href="style-main.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="style-grid.css" type="text/css" media="all" />
+  <!-- RESPONSIVE CSS HERE -->
+  <link rel="stylesheet" href="responsive.css" type="text/css" media="all" />
+```
+
+**Live Server**
+
+Open `index.html` in Live Server and were ready to start coding.  
+
 ### Our First Media Query
 
+Since the design is already setup for Desktop we will need to work our way backwards and will start with Tablet.  
+
+**NOTE:** For the record you should always start with **MOBILE FIRST** so keep that in mind when your working through any additional layouts for labs/hw or even more importantly your unit projects.
+
+
+**Tablet @ 768px**
+
+Let's first add a media query that targets tablet devices. 
 ```css
-@media screen and (max-width: 576px) {
-  .small-100 {
-    width: 100%;
-  }
+@media screen and (max-width: 768px) {
+ 
 }
 ```
 
+**Section #1**
+
+Now let's target some elements.  How about we start with the first section. 
+
+```css
+@media screen and (max-width: 768px) {
+ 	.main-content .section1 {
+		grid-column: 1 / 2;
+		grid-row: 1 / span 2;
+	}
+}
+```
+
+
+
+We won't see anything until set the viewport for tablet.
+
+<img src="https://i.imgur.com/q582ihr.png">
+
+Once that has been done we should see `section #1` is now taking up less space. 
+
+<img src="https://i.imgur.com/u3sTjHR.png" width=400/>
+
+**Section #2**
+
+Now let's add the css for `section #2`.
+
+```css
+@media screen and (max-width: 768px) {
+ 	.main-content .section1 {
+		grid-column: 1 / 2;
+		grid-row: 1 / span 2;
+  }
+  .main-content .section2 {
+		grid-column: 2 / 4;
+		grid-row: 1 / 3;
+	}
+}
+```
+
+
+Here is the design.
+
+<img src="https://i.imgur.com/JPqMGhi.png" width=400/>
+
+**Questions:** Has the element moved? What has changed?
+
+<hr>
+
+#### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 1min
+
+- Try deleting `section #3` in DevTools and see what happens. 
+
+<hr>
+
+#### Complete the Tablet Design
+
+Here is the remaining CSS needed to implement the Tablet design. 
+
+```css
+@media screen and (max-width: 768px) {
+	.main-content .section1 {
+		grid-column: 1 / 2;
+		grid-row: 1 / span 2;
+	}
+
+	.main-content .section2 {
+		grid-column: 2 / 4;
+		grid-row: 1 / 3;
+	}
+
+	.main-content .section3 {
+		grid-column: 1 / 2;
+		grid-row: 3 / 4;
+	}
+
+	.main-content .sidebar1 {
+		grid-column: 2 / 4;
+		grid-row: 3 / 4;
+	}
+
+	.main-content .sidebar2 {
+		display: none;
+	}
+}
+```
+
+
+
+#### Complete the Mobile Design
+
+Before we implement the final design let's first talk about the `hamburger` menu.  This is font provided by font-awesome. 
+
+```html
+<i class="fas fa-bars fa-2x"></i>
+```
+
+**Question:** 
+
+- What css property is being targeted to hide the icon when it's not needed and what is the value?
+- What value is being used to make the icon visible again? 
+
+<hr>
+
+#### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 10min
+
+- Take a moment to examine the mobile version of the [deployed version](http://seir-responsive-design.surge.sh/) site
+- Examine which elements have moved or are on longer there
+- Write a media query that targets a max-width @ 425px
+- Add the css needed to implement the design
+- When asked slack your css in a thread created by the instructor
+
+<hr>
 
 You can also do this in reverse - hiding stuff on large screens and only showing
 on mobile. Think about the hamburger menu that appears on mobile navbars.
@@ -217,13 +381,11 @@ Start from the mobile layout and scale up when designing your page. Most CSS
 frameworks are mobile-first, mobile is a huge portion of web traffic, and it's
 easier to scale up and add items than cram stuff into a small space.
 
-It's 2019. We don't build non-responsive websites anymore!
-
+It's 2020. We don't build non-responsive websites anymore!
 
 
 ## Resources
 
+- [Responsive Web Design](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/#media-queries)
 - A list of device viewport sizes: http://viewportsizes.com/
-- [Solution branch for the starter code](https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-starter-code/tree/solution-responsive)
-  - can also run `git checkout solution-responsive` in the repo we forked and
-    clone earlier.
+- [Breakpoints](https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862)
