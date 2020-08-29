@@ -1,99 +1,116 @@
 # Responsive Web Design
 
-## How to think about building websites responsively
 
-The goal of this mini-lesson is to start thinking in a new way about how
-websites should be structured.
+### LEARNING OBJECTIVES
 
-We'll talk about the problems with building fixed width websites and the ways to
-avoid them.
+_After this lesson, you will be able to:_
 
-On some websites, over 40% of the traffic comes from mobile devices or tablets.
-Many people's only connection to the internet is through their smartphone.
+- Describe what Responsive Design is 
+- Explain the benefits of Mobile First design
+-  Use CSS Media Queries to alter page layout and styling
+- Define a function in an object
+- Pass a function as a parameter
 
-Addressing this problem is not just a matter of aesthetics, but functionality
-and even more so, accessibility. Catering to everyone who visits your site is
-absolutely in your best interest.
+## What is responsive design? 
 
-## The problem
+"Responsive Design" is the strategy of making a site that "responds" to the browser and device that it is being shown on... by looking awesome no matter what.
 
-Websites are often built with a desktop environment in mind. Think about a long
-sheet of paper in portrait mode - it's got a specific width, and you scroll up
-and down the page.
+Or, the dryer Wikipedia definition:
 
-The part of the site that you can see at any given time is what's inside the
-`viewport`. It's just like it sounds. You can think of the viewport as the
-window to the site - the whole site is there, but you can only look at a little
-bit at a time.
+"Responsive web design (RWD) is a web design approach aimed at crafting sites to provide an optimal viewing experience—easy reading and navigation with a minimum of resizing, panning, and scrolling—across a wide range of devices (from mobile phones to desktop computer monitors).""
 
-![viewport](./images/viewport.png)
+#### More devices
 
-Building websites for a desktop environment means, generally, you're operating
-with a minimum width of 900 pixels. It also means the content inside that 900px
-is either:
+Not that long ago, building a successful online presence meant just ensuring that your website worked correctly in all the major desktop browsers.
 
-- A percentage of the width (e.g. 50%)
-- A fixed width (e.g. 450px)
+Fast forward to today, and the desktop computer is dying, more than 71% of the US population own a smartphone.
 
-Here's a basic example of a site with a sidebar:
+Here are some facts from [2020 Mobile vs. Desktop Usage Insights](https://techjury.net/blog/mobile-vs-desktop-usage/#gref)
 
-![normalwidth](./images/normal.png)
+- Over the course of one year, mobile users share increased by over 10%.
+- Mobile vs desktop usage stats in 2020 reveal 50% B2B inquiries are made on mobile.
+- Social media takes 25% of all digital media consumption and it is mainly accessed on mobile.
+- 51% of the time spent online in the US is on mobile devices.
+- Mobile market share worldwide is 52.1% compared to the desktop market share of 44.2%.
+- 40% of people search only on a smartphone.
+- More than half of all video views come from mobile devices.
+- Mobile apps have higher engagement rates than mobile-optimized websites or desktop web viewing.
 
-Let's think about what might happen when we look at this page on a smaller
-screen, like a phone or tablet. Or for something comparable, imagine what it
-would happen if you took your web browser and dragged/resized it to make it
-skinnier.
 
-![squished](./images/squished.png)
+## Responsive Web Design
 
-### Best case scenario
+**Responsive Web Design**, not surprisingly, is designing a web page to respond to the size of the device's screen being used to view it.
 
-The phone will render the page with all of its features at normal proportions,
-just super zoomed out. If you've ever used a website like this you understand
-the frustrations - horizontal scrolling, tiny text, everything looks like it's
-made for ants.
+Specifically, the most important criteria to respond to is the **width** of the device's screen.
 
-![websiteforants](./images/what-is-this-a-website-for-ants.jpg)
+Lastly, what specifically **responds**? Primarily, the overall layout of the page, but you can pretty much change anything on the page you want.  For example, I'm sure you've seen the menu links in a navigation bar disappear and be replaced with a "hamburger" icon before.  Take a look at the image at the top of this lesson too - notice how the number of columns changes?
 
-Here's a screenshot of github's site viewed on my phone. ANTS!
+Okay, now that you know what Responsive Design is, let's look at some real-world examples out there.
 
-![github-desktop](./images/github-screenshot.png)
+## Mobile First Design Philosophy
 
-### Worst Case Scenario
+There are two approaches that can be followed:
 
-The worst case scenario is like the squished image above. All of the content
-formatting is basically unreadable because it's still 1/3 of the screen, but the
-screen is way smaller now.
+1. Write the starting CSS for a large, desktop screen, then apply "new" CSS (using media queries) as the screen width decreases, or
+2. Write the starting CSS for a mobile screen, then apply additional CSS as the width increases.
 
-## Live example
+The experts tell us that it's better, to use a **mobile first** approach for the following reasons:
 
-Fork and clone the
-[starter code for this lesson](https://git.generalassemb.ly/dc-wdi-fundamentals/responsive-web-design-starter-code)
+- Translating the design from mobile to desktop is easier than vice-versa, thus it should require less time to build the site.
+- Mobile first encourages you to think about what content is the most important - and prioritize them.
+- It's easier to detect performance related issues, such as the slow loading of large image files, on mobile devices and it's better to deal with performance issues early on.
+- A design based on a small screen width, although not ideal, is usable on larger devices, however the reverse is often not the case.
 
-Open up the directory in Sublime Text and open the HTML in your browser with the
-CLI command `open index.html`
+## First Step to Enabling a Better Experience on Mobile
 
-Resize your browser width and see what happens to the content.
+Unlike on desktop browsers that render pixel-by-pixel, mobile browsers actually render to a virtual **viewport**. This virtual viewport concept is what enables pinching to zoom in and out.
 
-## Bad solutions
+By default, mobile browsers scale down the content to fit it in the browser window, resulting in tiny text that's hard to read.
 
-In the olden days, some websites had two versions: desktop and mobile.
+#### `<meta name="viewport" ...>` to the Rescue
 
-You may even still see sites that do this. Visiting `https://www.reddit.com`
-from your desktop works great, but visit it from your phone and you'll probably
-be redirected to `https://m.reddit.com` (if they still do that).
+The viewport `<meta name="viewport" ...>` enables us to inform the browser not to scale the page as seen above and instead, display the content based upon the physical number of pixels available - just like desktop browsers do.
 
-These are totally different sites! Different html, css, and javascript being
-served to the same users, just because they logged in from their phone.
 
-THIS IS TERRIBLE! Now you (the developer) have to maintain two completely
-different websites. Both versions, and you, are all probably both going to
-suffer as a result.
+
+Between the two images below can you guess which one is using the viewport tag? 
+
+<img src="https://i.imgur.com/1d3F76a.jpg">
+
+This viewport `meta` tag is so important, that VS Code has been adding it automatically in the HTML boilerplate.
+
+The following should look familiar...
+
+
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+### Testing Responsive Designs
+
+#### Chrome Device Toolbar
+
+DevTools comes with a great feature to easily view a web sites responsiveness using the `device toolbar`. 
+
+<img src="https://i.imgur.com/DHYdzht.png" width=300/>
+
+Once the toolbar is activated we will be able change the screen width using the sections just above the site or the slider bar to the right.
+
+<img src="https://i.imgur.com/pdFgvi2.jpg" >
+
+#### Am I Responsive
+
+Another option is to use [ami.responsivedesign.is](https://i.imgur.com/pdFgvi2.jpg).  This will display a site in 4 different viewports.
+
+<img src="https://i.imgur.com/R63nt7j.jpg" />
 
 ## Introducing Media Queries
 
 Media queries are a CSS feature that lets you define properties and values at
 different browser widths.
+
+The media query can be composed of any number of media feature expressions and an optional media type, such as print, screen, or all.
 
 Here's what a media query looks like in its simplest form:
 
@@ -110,7 +127,7 @@ Let's break it down:
   `print` for pdfs or printing out html pages. optional.
 - `(max-width: 500px)` is one of the parameters you can specify. There are lots.
   This tells the screen to only apply this query when the screen width is BELOW
-  500px. required.
+  500px.
 
 > For reference:
 > https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
@@ -155,7 +172,7 @@ of this exercise.
 > [here's a really good article](https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862)
 > on how you should choose your breakpoints
 
-## Let's use all this stuff now
+## Our Design
 
 We'll use these media queries and breakpoints together to make sure that our
 website looks nice on all sized devices!
@@ -165,19 +182,18 @@ Let's make some changes to the starter code to make our site responsive.
 The first thing we should do is get a sense of all the different components that
 we want to affect using media queries.
 
-In this case, we'll start with the `.text` and `.sidebar` classes, because as we
-saw before, they have fixed widths and are full of content that gets squished on
-small screen sizes.
+#### Desktop Version
+Below is a desktop version of a build that you might have already done in class.
 
-Since we've decided on our breakpoints above, let's write a media query and
-create a new class. We'll put this new class on whatever elements we want to
-change with the media query.
+<img src="https://i.imgur.com/qG9wv1U.png" width=700/>
 
-We could also just modify the classes we already have by wrapping them in media
-queries, but that's less flexible, and way more repetitive.
+#### Mobile and Tablet Versions
+And here is the same web site with media queries enabled for mobile and desktop.
 
-> Note: we're using max-width here instead of the min-width examples that
-> bootstrap has.
+<img src="https://i.imgur.com/sJ3w9bS.png" />
+
+
+### Our First Media Query
 
 ```css
 @media screen and (max-width: 576px) {
@@ -187,37 +203,6 @@ queries, but that's less flexible, and way more repetitive.
 }
 ```
 
-Now go ahead and add that class to the appropriate elements. Resize the window.
-WHAT IS HAPPENING??!
-
-The sidebar should pop down below the text content when the viewport width gets
-smaller than 572px.
-
-Feel free to add more media queries at different widths and use them to create
-different classes!
-
-## What else can we do with media queries?
-
-Obviously, width isn't the only property we can change using a media query. We
-can change **any** css property.
-
-Add a new class to the small media query called `hidden-small`
-
-```css
-@media screen and (max-width: 576px) {
-  .small-100 {
-    width: 100%;
-  }
-  .hidden-small {
-    display: none;
-  }
-}
-```
-
-Now go apply that class to a couple of the `.navbar-item` elements, and watch
-them disappear when you shrink your browser window.
-
-**AMAZING!!!**
 
 You can also do this in reverse - hiding stuff on large screens and only showing
 on mobile. Think about the hamburger menu that appears on mobile navbars.
@@ -234,34 +219,7 @@ easier to scale up and add items than cram stuff into a small space.
 
 It's 2019. We don't build non-responsive websites anymore!
 
-## Bonus Aside: the Grid
 
-Working with random percentages is great and all, but having consistency will
-take you much further and keep you from pulling your hair out.
-
-Enter: the GRID
-
-![THE GRID](./images/tron_grid.jpg)
-
-Instead of picking 40, 50, 60, whatever percent, many frameworks use 12 columns.
-
-The basic idea is that columns are equal to n divided by 12. So an element that
-is 3 columns wide === 3/12, which equals 25% width.
-
-5 columns === 5 / 12, or 41.6666667% width.
-
-Don't worry about the weird numbers, the browser does the math for us.
-
-Bootstrap uses this to generate CSS classes for each breakpoint and column
-combo. Example css classes:
-
-- `col-xs-12` means 12 columns wide at xtra small width
-- `col-md-4` means 4 columns wide at medium width
-- `col-lg-2` means 2 columns wide at large width
-
-We can apply these classes to any elements that we want. Generally, we apply
-them to elements that we want to act as containers. Then those elements resize
-depending on the screen size.
 
 ## Resources
 
