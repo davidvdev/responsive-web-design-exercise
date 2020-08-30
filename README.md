@@ -351,10 +351,10 @@ Before we implement the final design let's first talk about the `hamburger` menu
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 10min
 
-- Take a moment to examine the mobile version of the [deployed version](http://seir-responsive-design.surge.sh/) site
+- Take a moment to examine the `mobile version` of the [deployed version](http://seir-responsive-design.surge.sh/) site
 - Examine which elements have moved or are on longer there
-- Write a media query that targets a max-width @ 425px
-- Add the css needed to implement the design
+- Write a `media query` that targets a max-width of 425px
+- Add the `css` needed to implement the design
 - When asked slack your css in a thread created by the instructor
 
 <hr>
@@ -376,5 +376,5 @@ It's 2020. We don't build non-responsive websites anymore!
 ## Resources
 
 - [Responsive Web Design](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/#media-queries)
-- A list of device viewport sizes: http://viewportsizes.com/
+- [A list of device viewport sizes](http://viewportsizes.com/)
 - [Breakpoints](https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862)
