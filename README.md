@@ -351,11 +351,15 @@ Before we implement the final design let's first talk about the `hamburger` menu
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 10min
 
-- Take a moment to examine the `mobile version` of the [deployed version](http://seir-responsive-design.surge.sh/) site
+<!-- - Take a moment to examine the `mobile version` of the site [deployed version](http://seir-responsive-design.surge.sh/) site -->
+- Take a moment to examine the `mobile version` of the site 
 - Examine which elements have moved or are on longer there
 - Write a `media query` that targets a max-width of 425px
 - Add the `css` needed to implement the design
-- When asked slack your css in a thread created by the instructor
+
+Mobile Layout: 
+
+<img src="https://i.imgur.com/Ei5DoYi.png">
 
 <hr>
 
