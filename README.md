@@ -15,15 +15,11 @@ _After this lesson, you will be able to:_
 
 **Responsive Web Design**, not surprisingly, is designing a web page to respond to the size of the device's screen being used to view it.
 
-Specifically, the most important criteria to respond to is the **width** of the device's screen.
-
-Lastly, what specifically **responds**? Primarily, the overall layout of the page, but you can pretty much change anything on the page you want.  For example, I'm sure you've seen the menu links in a navigation bar disappear and be replaced with a "hamburger" icon before.  Take a look at the image at the top of this lesson too - notice how the number of columns changes?
-
-Okay, now that you know what Responsive Design is, let's look at some real-world examples out there.
+Specifically, the most important criteria to respond to is the **width** of the device's screen.  For example, I'm sure you've seen the menu links in a navigation bar disappear and be replaced with a "hamburger" icon before.  
 
 **Facts You Should Know**
 
-Here are some facts from [2020 Mobile vs. Desktop Usage Insights](https://techjury.net/blog/mobile-vs-desktop-usage/#gref)
+Here are some facts from: [2020 Mobile vs. Desktop Usage Insights](https://techjury.net/blog/mobile-vs-desktop-usage/#gref)
 
 - Over the course of one year, mobile users share increased by over 10%.
 - Mobile vs desktop usage stats in 2020 reveal 50% B2B inquiries are made on mobile.
@@ -46,7 +42,6 @@ The experts tell us that it's better, to use a **mobile first** approach for the
 
 - Translating the design from mobile to desktop is easier than vice-versa, thus it should require less time to build the site.
 - Mobile first encourages you to think about what content is the most important - and prioritize them.
-- It's easier to detect performance related issues, such as the slow loading of large image files, on mobile devices and it's better to deal with performance issues early on.
 - A design based on a small screen width, although not ideal, is usable on larger devices, however the reverse is often not the case.
 
 ## First Step to Enabling a Better Experience on Mobile
@@ -55,7 +50,7 @@ Unlike on desktop browsers that render pixel-by-pixel, mobile browsers actually 
 
 By default, mobile browsers scale down the content to fit it in the browser window, resulting in tiny text that's hard to read.
 
-#### `<meta name="viewport" ...>` to the Rescue
+#### The Viewport Meta Tag 
 
 The viewport `<meta name="viewport" ...>` enables us to inform the browser not to scale the page as seen above and instead, display the content based upon the physical number of pixels available - just like desktop browsers do.
 
@@ -132,6 +127,22 @@ Besides `max-width` there is also `min-width` and both an be used together in th
 | min-width | >= min-width| @media and (min-width: 600px)                        |
 | max-width and min-width | between those ranges only               | @media only screen and (max-width: 600px) and (min-width: 400px)  |
 
+<hr>
+
+#### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 5min
+
+- Take a moment to examine the following site in DevTools
+- Make use of the `Device Toolbar` to see what it looks like in `Desktop`, `Tablet` and `Mobile`
+- Inspect the `.container header .header-nav-area #nav_container` element 
+- Now examine the css and look for a media query as you change from in `Desktop` or `Tablet` to `Mobile`
+
+**Side Note**
+
+That site was one attempt at rebuilding the official mars.nasa.gov site and using the experience to write the following medium article: [3 Ways To Implement Responsive Design In Your React App](https://medium.com/@jkeohan/3-ways-to-implement-responsive-design-in-your-react-app-bcb6ee7eb424)
+
+It was developed further to include additional responsive design features prompting yet another article [React Responsive Slider](https://itnext.io/react-responsive-slider-2ed4b07867b3) and is currently at this stage in development: [Mars Responsive Slider](https://02nz9.csb.app/)
+
+<hr>
 
 ## Breakpoints
 
@@ -192,7 +203,7 @@ And here is the same web site with media queries enabled for mobile and desktop.
 
 #### Live Site
 
-Here is a [deployed version](http://seir-responsive-design.surge.sh/) of the site. 
+Here is a [deployed version](http://seir-responsive-design.surge.sh/) of the site. Let's take a moment to test the site out using DevTools `device toolbar` and see the responsive design in action. 
 
 <hr>
 
@@ -297,6 +308,7 @@ Here is the design.
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 1min
 
 - Try deleting `section #3` in DevTools and see what happens. 
+- When asked slack your response in a thread created by the instructor
 
 <hr>
 
@@ -355,7 +367,7 @@ Before we implement the final design let's first talk about the `hamburger` menu
 - Take a moment to examine the `mobile version` of the site 
 - Examine which elements have moved or are on longer there
 - Write a `media query` that targets a max-width of 425px
-- Add the `css` needed to implement the design
+- Add the `css` needed to target those elements and implement the design
 
 Mobile Layout: 
 
