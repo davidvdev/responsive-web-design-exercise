@@ -131,7 +131,7 @@ Besides `max-width` there is also `min-width` and both an be used together in th
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 5min
 
-- Take a moment to examine the following site in DevTools
+- Take a moment to examine the following [site](https://0wqnv.csb.app/) in DevTools
 - Make use of the `Device Toolbar` to see what it looks like in `Desktop`, `Tablet` and `Mobile`
 - Inspect the `.container header .header-nav-area #nav_container` element 
 - Now examine the css and look for a media query as you change from in `Desktop` or `Tablet` to `Mobile`
