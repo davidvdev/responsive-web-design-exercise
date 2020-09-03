@@ -84,11 +84,28 @@ Once the toolbar is activated we will be able change the screen width using the 
 
 <img src="https://i.imgur.com/pdFgvi2.jpg" >
 
+
+
 #### Am I Responsive
 
 Another option is to use [ami.responsivedesign.is](https://i.imgur.com/pdFgvi2.jpg).  This will display a site in 4 different viewports.  
 
 <img src="https://i.imgur.com/R63nt7j.jpg" />
+
+<hr>
+
+#### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 5min
+
+- Let's take a moment to see the effect of removing the `viewport` tag for a site
+- Open [http://seir-responsive-design.surge.sh/](http://seir-responsive-design.surge.sh/) 
+- Use the `Device Toolbar` to see what it looks like in `Desktop`, `Tablet` and `Mobile`
+- The instructor will now comment out the viewport tag and push those changes
+- Refresh the page and see if anything has changed
+- Close and repoen `DevTools`
+- This time use `Device Toolbar` to see what it looks like in `Desktop`, `Tablet` and `Mobile`
+- What is now missing?
+
+<hr>
 
 ## Introducing Media Queries
 
