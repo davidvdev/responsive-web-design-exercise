@@ -70,7 +70,7 @@ By default, mobile browsers scale down the content to fit it in the browser wind
 
 #### The Viewport Meta Tag 
 
-The viewport `<meta name="viewport" ...>` enables us to inform the browser not to scale the page as seen above and instead, display the content based upon the physical number of pixels available - just like desktop browsers do.
+The viewport meta tag **<meta name="viewport" ...>** enables us to inform the browser not to scale the page and display the content based upon the physical number of pixels available - just like desktop browsers do.
 
 
 
@@ -80,7 +80,7 @@ Between the two images below can you guess which one is using the viewport tag?
   <img src="https://i.imgur.com/1d3F76a.jpg" width=600>
 </p>
 
-This viewport `meta` tag is so important, that VS Code has been adding it automatically in the HTML boilerplate.
+This viewport **meta** tag is so important, that all editors have been adding it automatically as part of the HTML boilerplate.
 
 The following should look familiar...
 
@@ -94,11 +94,11 @@ The following should look familiar...
 
 #### Chrome Device Toolbar
 
-DevTools comes with a great feature to easily view a web sites responsiveness using the `device toolbar`.  
+DevTools comes with a great feature to easily view a web sites responsiveness using the **device toolbar**.  
 
 <img src="https://i.imgur.com/DHYdzht.png" width=300/>
 
-Once the toolbar is activated we will be able change the screen width using the sections just above the site or the slider bar to the right.
+Once the toolbar is activated we will be able change the screen width using the sections just above the site (highlighted in red below) or the slider bar to the right.
 
 <img src="https://i.imgur.com/pdFgvi2.jpg" >
 
@@ -114,25 +114,34 @@ Another option is to use [ami.responsivedesign.is](https://i.imgur.com/pdFgvi2.j
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 5min
 
-- Let's take a moment to see the effect of removing the `viewport` tag for a site
-- Open [http://seir-responsive-design.surge.sh/](http://seir-responsive-design.surge.sh/) 
-- Use the `Device Toolbar` to see what it looks like in `Desktop`, `Tablet` and `Mobile`
+- Let's take a moment to see the effect of removing the **viewport** tag for a site
+- Open [http://seir-1207-responsive.surge.sh](http://seir-1207-responsive.surge.sh) 
+- Use the **Device Toolbar** to see what it looks like in **Desktop**, **Tablet** and **Mobile**
 - The instructor will now comment out the viewport tag and push those changes
 - Refresh the page and see if anything has changed
-- Close and repoen `DevTools`
-- This time use `Device Toolbar` to see what it looks like in `Desktop`, `Tablet` and `Mobile`
-- What is now missing?
+-Use **Device Toolbar** to see what it looks like in **Desktop**, **Tablet** and **Mobile**
+
+:question: - What has changed?
 
 <hr>
 
 ## Introducing Media Queries
 
-Media queries are a CSS feature that lets you define properties and values at
-different browser widths.
+Media queries are a CSS feature that lets you set CSS properties and values at different browser widths.
 
-The media query can be composed of any number of media feature expressions and an optional media type, such as print, screen, or all.
+The media query can be composed of any number of media feature expressions and an optional media type, such as **print, screen, or all**.
 
 Here's what a media query looks like in its simplest form:
+
+```css
+@media (max-width: 500px) {
+  p { 
+   color: red;
+  }
+}
+```
+
+And now one that specifically specifies this is for viewable screens
 
 ```css
 @media screen and (max-width: 500px) {
@@ -141,6 +150,19 @@ Here's what a media query looks like in its simplest form:
   }
 }
 ```
+
+And yet another one for when the user prints the page
+
+```css
+@media print and (max-width: 500px) {
+  p { 
+   color: red;
+  }
+}
+```
+
+
+
 
 Let's break it down:
 
