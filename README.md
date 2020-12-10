@@ -106,7 +106,7 @@ Once the toolbar is activated we will be able change the screen width using the 
 
 #### Am I Responsive
 
-Another option is to use [ami.responsivedesign.is](https://i.imgur.com/pdFgvi2.jpg).  This will display a site in 4 different viewports.  
+Another option is to use [ami.responsivedesign.is](http://ami.responsivedesign.is/).  This will display a site in 4 different viewports.  
 
 <img src="https://i.imgur.com/R63nt7j.jpg" />
 
