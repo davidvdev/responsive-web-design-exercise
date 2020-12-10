@@ -167,11 +167,10 @@ And yet another one for when the user prints the page
 Let's break it down:
 
 - `@media` is the start of the declaration. required.
-- `screen` tells the browser to only use this on the screen. Another option is
+- `screen` tells the browser to only use this on the screen. The othe r option is
   `print` for printing out html pages.
-- `(max-width: 500px)` is one of the parameters you can specify. There are lots.
-  This tells the screen to only apply this query when the screen width is BELOW
-  500px.
+- `(max-width: 500px)` is one of the parameters you can specify. 
+  This tells the screen to only apply this query when the screen width is UP TO 500px but not beyond that size. 
 - `p { color: red;}` is the element we are targeting
 
 #### Additional Settings
@@ -188,10 +187,19 @@ Besides `max-width` there is also `min-width` and both an be used together in th
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 5min
 
-- Take a moment to examine the following [site](https://0wqnv.csb.app/) in DevTools
-- Make use of the `Device Toolbar` to see what it looks like in `Desktop`, `Tablet` and `Mobile`
-- Inspect the `.container header .header-nav-area #nav_container` element 
-- Now examine the css and look for a media query as you change from in `Desktop` or `Tablet` to `Mobile`
+- Take a moment to examine the following [Mars site](https://0wqnv.csb.app/) in DevTools
+- Make use of the **Device Toolbar** to see what it looks like in **Desktop**, **Tablet** and **Mobile**
+- Inspect the **.container header .header-nav-area #nav_container** element 
+- Now examine the css and look for a media query as you change from in **Desktop** or **Tablet** to **Mobile**
+
+
+Add your findings to the slack thread created by the instructor.
+
+<!-- INLINE STYLES -->
+<!-- https://wpixk.csb.app/ -->
+
+<!-- REACT SOCKS -->
+<!-- https://xg8z2.csb.app/ -->
 
 **Side Note**
 
@@ -203,14 +211,14 @@ It was developed further to include additional responsive design features prompt
 
 ## Breakpoints
 
-Breakpoints are just a set (usually 3-5) of viewport widths, that you use in
+Breakpoints are just a set of viewport widths (usually 3-5) , that you use in
 conjunction with media queries.
 
 You want your website to react predictably - therefore you should decide when
 you want your media queries to do their magic, and stick to that same set.
 
 Here's what [bootstrap](https://getbootstrap.com/docs/4.1/layout/overview/), the
-most popular CSS framework uses:
+most popular CSS framework uses as its breakpoints:
 
 ```css
 /* Small devices (landscape phones, 576px and up) */
@@ -240,8 +248,7 @@ of this exercise.
 
 ## Our Design
 
-We'll use these media queries and breakpoints together to make sure that our
-website looks nice on all sized devices!
+We'll use these media queries and breakpoints together to apply a responsive design to our site. 
 
 The first thing we should do is get a sense of all the different components that
 we want to affect using media queries.
@@ -252,7 +259,7 @@ This is the desktop version of the site.
 <img src="https://i.imgur.com/qG9wv1U.png" />
 
 #### Mobile and Tablet Versions
-And here is the same web site with media queries enabled for mobile and desktop.
+And here is the same web site with media queries enabled for mobile and tablet.
 
 <img src="https://i.imgur.com/sJ3w9bS.png" />
 
@@ -267,9 +274,10 @@ Here is a [deployed version](http://seir-responsive-design.surge.sh/) of the sit
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 5min
 
 - Take a moment to examine the deployed site in DevTools
-- Make use of the `Device Toolbar` to see what it looks like in `Tablet` and `Mobile`
+- Make use of the **Device Toolbar** to see what it looks like in **Tablet** and **Mobil**
 - Inspect a few elements and see if you can discover a few media queries
-- When asked slack your response in a thread created by the instructor
+
+When asked slack your response in a thread created by the instructor
 
 <hr>
 
@@ -295,7 +303,7 @@ In the HTML we should see all the css files linked in the following order:
 
 **Live Server**
 
-Open `index.html` in `Live Server` and were ready to start coding.  
+Open **index.html** in **Live Server** and were ready to start coding.  
 
 ### Our First Media Query
 
@@ -364,8 +372,9 @@ Here is the design.
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 1min
 
-- Try deleting `section #3` in DevTools and see what happens. 
-- When asked slack your response in a thread created by the instructor
+- Try deleting **section #3** in DevTools and see what happens. 
+
+When asked slack your response in a thread created by the instructor
 
 <hr>
 
@@ -411,27 +420,25 @@ Before we implement the final design let's first talk about the `hamburger` menu
 <i class="fas fa-bars fa-2x"></i>
 ```
 
-**Question:** 
+<hr>
 
-- What css property is being targeted to hide the icon when it's not needed and what is the value?
-- What value is being used to make the icon visible again? 
+:question: What css property is being targeted to hide the icon when it's not needed and what is the value?
+
+:question: What value is being used to make the icon visible again? 
 
 <hr>
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 10min
 
 <!-- - Take a moment to examine the `mobile version` of the site [deployed version](http://seir-responsive-design.surge.sh/) site -->
-- Take a moment to examine the `mobile version` of the site 
-- Examine which elements have moved or are on longer there
-- Write a `media query` that targets a max-width of 425px
-- Add the `css` needed to target those elements and implement the design
+- Take a moment to examine the **mobile version** of the site 
+- Examine which elements have moved or are no longer there
+- Write a **media query** that targets a max-width of 425px
+- Add the **css** needed to target those elements and implement the design
 
 Mobile Layout: 
 
 <img src="https://i.imgur.com/Ei5DoYi.png">
-
-<hr>
-
 
 ## Thinking responsively
 
@@ -444,6 +451,19 @@ frameworks are mobile-first, mobile is a huge portion of web traffic, and it's
 easier to scale up and add items than cram stuff into a small space.
 
 It's 2020. We don't build non-responsive websites anymore!
+
+<hr>
+
+## Bonus
+
+Download and Install [https://responsively.app/](https://responsively.app/)
+
+This will allow you to develop a site and visualize all viewports simultaneously 
+
+<img src="https://i.imgur.com/N09b1cm.png" width=500/>
+
+
+
 
 
 ## Resources
