@@ -59,25 +59,3 @@
     }
 }
 
-@media print and (min-width: 768px) {
-    .main-content .section1 {
-        display:none;
-    }
-
-    .main-content .section2 {
-        display:none;
-    }
-
-    .main-content .section3 {
-        grid-column: 1 / 2;
-        grid-row: 3 / 4;
-    }
-
-    .main-content .sidebar1 {
-        grid-column: 2 / 4;
-    }
-
-    .main-content .sidebar2 {
-        display:none;
-    }
-}
