@@ -1,47 +1,65 @@
+
+---
+
+Title: Introduction to Responsive Design<br>
+Author: Joe Keohan<br>
+Duration: 120min+<br>
+Competencies: HTML, CSS Basics, <br>
+Prerequisites: Flexbox, CSS Grid<br>
+
+---
+
 # Responsive Web Design
+
+
 
 
 ### LEARNING OBJECTIVES
 
 _After this lesson, you will be able to:_
 
-- Describe what Responsive Design is 
-- Explain the benefits of Mobile First design
--  Use CSS Media Queries to alter page layout and styling
-- Define a function in an object
-- Pass a function as a parameter
+- Describe the concepts of **Responsive Design** 
+- Explain the benefits of **Mobile First** design
+- Use **CSS Media Queries** to implement a responsive design layout
+
 
 ## Responsive Web Design
 
-**Responsive Web Design**, not surprisingly, is designing a web page to respond to the size of the device's screen being used to view it.
+**Responsive Web Design** is designing a web page to respond to the size of a specific device viewport. Specifically, the most important criteria to respond to is the **width** of the device's screen.  
 
-Specifically, the most important criteria to respond to is the **width** of the device's screen.  For example, I'm sure you've seen the menu links in a navigation bar disappear and be replaced with a "hamburger" icon before.  
+For example, I'm sure you've seen the menu links in a navigation bar disappear and be replaced with a **hamburger** icon before.  
 
 **Facts You Should Know**
 
 Here are some facts from: [2020 Mobile vs. Desktop Usage Insights](https://techjury.net/blog/mobile-vs-desktop-usage/#gref)
 
 - Over the course of one year, mobile users share increased by over 10%.
-- Mobile vs desktop usage stats in 2020 reveal 50% B2B inquiries are made on mobile.
 - Social media takes 25% of all digital media consumption and it is mainly accessed on mobile.
 - 51% of the time spent online in the US is on mobile devices.
 - Mobile market share worldwide is 52.1% compared to the desktop market share of 44.2%.
 - 40% of people search only on a smartphone.
 - More than half of all video views come from mobile devices.
-- Mobile apps have higher engagement rates than mobile-optimized websites or desktop web viewing.
+
 
 
 ## Mobile First Design Philosophy
 
 There are two approaches that can be followed:
 
-1. Write the starting CSS for a large, desktop screen, then apply "new" CSS (using media queries) as the screen width decreases, or
-2. Write the starting CSS for a mobile screen, then apply additional CSS as the width increases.
+- Begin designing for a desktop screen, then apply additional CSS as the screen width **decreases**
+
+**OR**
+
+- Begin designing for a mobile screen, then apply additional CSS as the width **increases**.
+
+Regardless of which approach you take you still must incorporate some method to determine when the viewport width has changed and then respond accordingly. 
+
+### Mobile First Approach Benefits
 
 The experts tell us that it's better, to use a **mobile first** approach for the following reasons:
 
-- Translating the design from mobile to desktop is easier than vice-versa, thus it should require less time to build the site.
 - Mobile first encourages you to think about what content is the most important - and prioritize them.
+- Translating the design from mobile to desktop is easier than vice-versa, thus it should require less time to build the site.
 - A design based on a small screen width, although not ideal, is usable on larger devices, however the reverse is often not the case.
 
 ## First Step to Enabling a Better Experience on Mobile
