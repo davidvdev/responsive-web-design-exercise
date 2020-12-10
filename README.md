@@ -121,7 +121,7 @@ Another option is to use [ami.responsivedesign.is](https://i.imgur.com/pdFgvi2.j
 - Refresh the page and see if anything has changed
 -Use **Device Toolbar** to see what it looks like in **Desktop**, **Tablet** and **Mobile**
 
-:question: - What has changed?
+:question: - What part(s) of the layout have changed?
 
 <hr>
 
