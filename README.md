@@ -114,12 +114,14 @@ Another option is to use [ami.responsivedesign.is](http://ami.responsivedesign.i
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 5min
 
+<!-- [CodePen](https://codepen.io/jkeohan/pen/eYWmXqY) -->
+
 - Let's take a moment to see the effect of removing the **viewport** tag for a site
-- Open [http://seir-1207-responsive.surge.sh](http://seir-1207-responsive.surge.sh) 
+- Open [https://codepen.io/jkeohan/live/eYWmXqY](https://codepen.io/jkeohan/live/eYWmXqY) 
 - Use the **Device Toolbar** to see what it looks like in **Desktop**, **Tablet** and **Mobile**
 - The instructor will now comment out the viewport tag and push those changes
 - Refresh the page and see if anything has changed
--Use **Device Toolbar** to see what it looks like in **Desktop**, **Tablet** and **Mobile**
+- Use **Device Toolbar** to see what it looks like in **Desktop**, **Tablet** and **Mobile**
 
 :question: - What part(s) of the layout have changed?
 
