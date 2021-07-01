@@ -192,7 +192,7 @@ Besides `max-width` there is also `min-width` and both an be used together in th
 - Take a moment to examine the following [Mars site](https://0wqnv.csb.app/) in DevTools
 - Make use of the **Device Toolbar** to see what it looks like in **Desktop**, **Tablet** and **Mobile**
 - Inspect the **.container header .header-nav-area #nav_container** element 
-- Now examine the css and look for a media query as you change from in **Desktop** or **Tablet** to **Mobile**
+- Now examine the css and look for a media query as you change from from **Desktop** to **Tablet** or vice versa.
 
 
 Add your findings to the slack thread created by the instructor.
@@ -269,7 +269,7 @@ And here is the same web site with media queries enabled for mobile and tablet.
 
 #### Live Site
 
-Here is a [deployed version](http://seir-responsive-design.surge.sh/) of the site. Let's take a moment to test the site out using DevTools `device toolbar` and see the responsive design in action. 
+Here is a [deployed version](https://codepen.io/jkeohan/live/eYWmXqY) of the site. Let's take a moment to test the site out using DevTools `device toolbar` and see the responsive design in action. 
 
 <hr>
 
